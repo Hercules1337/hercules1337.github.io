@@ -39,4 +39,12 @@ Questions to ask
 Example chaining executed command
 ```html
 http://localhost;whoami -> http://localhost;whoami;# -> ;whoami;#
+```
+### Methodology
+  - Understand what is happening in the backend
+      - what filtering is happening
+      - what limitation on certain characters there are
+### GOAL
+ - Try to get shell
+ - decide what technology to use for reverse shell
 
