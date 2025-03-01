@@ -8,16 +8,16 @@ Intro to Command Injection
 Testing Example:
 Dev Tools (In Browser)
 
-    ~ eval(1+1)
-    
-    ~ let userInput = '7*7'
-    ~ eval(userInput)
+eval(1+1);
 
-PHP interactive shell
+let userInput = '7*7';
+eval(userInput);
 
-  ~ php > $userInput = 'whoami';
-  
-  ~ php > system($userInput);
+PHP interactive shell:
+
+php > $userInput = 'whoami';
+
+php > system($userInput);
 
 NEVER TRUST INPUT FROM A USER & ANYBODY ELSE
 AVOID USEING "EVAL" OR "SYSTEM"
