@@ -16,6 +16,7 @@ Dev Tools (In Browser)
 PHP interactive shell
 
   ~ php > $userInput = 'whoami';
+  
   ~ php > system($userInput);
 
 NEVER TRUST INPUT FROM A USER & ANYBODY ELSE
