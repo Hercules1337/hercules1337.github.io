@@ -7,12 +7,14 @@ Intro to Command Injection
     
 Testing Example:
 Dev Tools (In Browser)
+
     ~ eval(1+1)
     
     ~ let userInput = '7*7'
     ~ eval(userInput)
 
 PHP interactive shell
+
   ~ php > $userInput = 'whoami';
   ~ php > system($userInput);
 
