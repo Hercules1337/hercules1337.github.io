@@ -22,4 +22,5 @@ $userInput = 'whoami';
 system($userInput);
 ```
 NEVER TRUST INPUT FROM A USER & ANYBODY ELSE
-AVOID USEING "EVAL" OR "SYSTEM"
+
+AVOID USING "EVAL" OR "SYSTEM"
