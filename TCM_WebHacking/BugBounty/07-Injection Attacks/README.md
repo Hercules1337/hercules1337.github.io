@@ -7,7 +7,7 @@ Intro to Command Injection
     
 Testing Example:
 Dev Tools (In Browser)
-##JavaScript
+## JavaScript
 ```js
 eval(1+1);
 
