@@ -8,10 +8,12 @@ Intro to Command Injection
 Testing Example:
 Dev Tools (In Browser)
 
+```js
 eval(1+1);
 
 let userInput = '7*7';
 eval(userInput);
+```
 
 PHP interactive shell:
 
