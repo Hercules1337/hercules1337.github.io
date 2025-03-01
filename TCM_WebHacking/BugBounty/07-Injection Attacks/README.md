@@ -24,3 +24,8 @@ system($userInput);
 NEVER TRUST INPUT FROM A USER & ANYBODY ELSE
 
 AVOID USING "EVAL" OR "SYSTEM"
+
+## Command Injection Attacks
+ - Some admin functionality may include an attack vector for command injection
+ - "Network Check" -> "http://localhost"
+ ~curl -l -s -L http://localhost | grep "HTTP/"
