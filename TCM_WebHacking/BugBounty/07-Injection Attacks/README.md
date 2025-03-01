@@ -7,19 +7,18 @@ Intro to Command Injection
     
 Testing Example:
 Dev Tools (In Browser)
-
+##JavaScript
 ```js
 eval(1+1);
 
 let userInput = '7*7';
 eval(userInput);
 ```
-
 PHP interactive shell:
-
-php > $userInput = 'whoami';
-
-php > system($userInput);
-
+## PHP
+```php
+$userInput = 'whoami';
+system($userInput);
+```
 NEVER TRUST INPUT FROM A USER & ANYBODY ELSE
 AVOID USEING "EVAL" OR "SYSTEM"
