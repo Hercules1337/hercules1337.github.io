@@ -6,6 +6,7 @@
   - testing/exectution can be done in the browser using Dev Tools (inspect element)
     
 Testing Example:
+
 Dev Tools (In Browser)
 ## JavaScript
 ```js
