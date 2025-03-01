@@ -47,4 +47,8 @@ http://localhost;whoami -> http://localhost;whoami;# -> ;whoami;#
 ### GOAL
  - Try to get shell
  - decide what technology to use for reverse shell
+```bash
+echo -e "\e[31mThis is red text\e[0m"
+echo -e "\e[32mThis is green text\e[0m"
+```
 
