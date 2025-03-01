@@ -31,4 +31,12 @@ AVOID USING "EVAL" OR "SYSTEM"
 ### cURL Command Example
 ```bash
 curl -l -s -L http://localhost | grep "HTTP/"
+```
+Questions to ask
+1. Can we chain commands?
+2. Can we add something that gets executed?
+
+Example chaining executed command
+```html
+http://localhost;whoami -> http://localhost;whoami;# -> ;whoami;#
 
