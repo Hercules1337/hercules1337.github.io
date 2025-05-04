@@ -78,9 +78,25 @@
 | `KEYS pattern`          | List all keys matching pattern  |
 | `FLUSHALL`              | Remove all keys in the database |
 
-
-
-
+- Loggin into Redis
+  - $~redis-cli -h _TargetIP_ -p _port_
+  - If a password is required
+  - $~redis-cli -h _TargetIP_ -p _port_ -a _password_
+ 
+- Navigating Redis
+  - KEYS *: shows all keys
+  - EXISTS key_name: check if key exists
+  - TYPE key_name: checks type of a key
+  - GET key_name: get value of a key
+ 
+- Extracting data
+- To extract data from Redis, it depends on the type of data stored. Here are some common scenarios:
+  - GET flag: for a string
+  - LRANGE list_name 0 -1: for a list
+  - HGETALL hash_name: for a hash
+  - SMEMBERS set_name: for a set
+ 
+_$~redis-cli -h TargetIP -p 6379 --> KEYS * --> GET flag_
 
 ### 5. Explosion
 ### 6. Preignition
