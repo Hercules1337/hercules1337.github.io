@@ -51,7 +51,7 @@
     - -N: No password (anon login)
   - Connect to a share
     - $~smbclient //_TargetIP_/_share_name_ -N
-    - Make sure _-L_ isn't in your command to connect to a share
+    - **Make sure _-L_ isn't in your command to connect to a share**
    
 - Common smbclient commands
   - ls: List files
