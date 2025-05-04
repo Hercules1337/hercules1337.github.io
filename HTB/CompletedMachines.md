@@ -1,5 +1,5 @@
-# Machines: Tier/Difficulty: Completion Status (Done 🟢, In Progress 🟡, Failed 🔴)
-## Starting Point
+## Machines: Tier/Difficulty: Completion Status (Done 🟢, In Progress 🟡, Failed 🔴)
+### Starting Point
 ### Tier 0: The key is a strong foundation
 1. ~~Meow~~ (Very Easy) 🟢
 2. ~~Fawn~~ (Very Easy) 🟢
