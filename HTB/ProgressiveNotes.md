@@ -192,7 +192,7 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 | `exit`                    | Leave the shell                  | –                   |
 
 **How to Login, Navigate, and Extract Data**
-1. _$~mongo TargetIP:port_ --> If unauthenticated and exposed, this connects you directly.
+1. _$~ mongosh IP:port_ --> If you get version mismatch errors, try using _mongo_ if available or downgrade _mongosh_.
 2.  _> show dbs_
 3.  _> use database_name_
 4.  _>show collections_
