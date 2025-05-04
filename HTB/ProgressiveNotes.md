@@ -45,11 +45,11 @@
   - 445 (Common, modern SMB)
   - 139 (older NetBIOS session)
  
-- Command to login to smb (using _smbclient_)
+- Command to login to smb to list shares (using _smbclient_)
   - $~smbclient -L //_TargetIP_ -N
     - -L: List shares
     - -N: No password (anon login)
-  - Connect to a share
+  - Connecting to a share
     - $~smbclient //_TargetIP_/_share_name_ -N
     - **Make sure _-L_ isn't in your command to connect to a share**
    
