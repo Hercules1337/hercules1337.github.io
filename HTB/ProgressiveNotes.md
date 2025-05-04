@@ -226,9 +226,9 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 | -n     | Dry run            | Simulate the transfer, showing what would happen without making changes     |
 
 ### Example Steps for CTF
-1. rsync rsync://10.10.10.10/
-2. rsync --list-only rsync://10.10.10.10/public/
-3. rsync rsync://10.10.10.10/public/flag.txt .
+1. rsync rsync://10.10.10.10/ (List Modules (Shared Folders like "public" or "Anonymous Shares"))
+2. rsync --list-only rsync://10.10.10.10/public/ (List Files Inside a Module ("public")
+3. rsync -P rsync://10.10.10.10/public/flag.txt . (This will download "flag.txt" to your current directory.)
 4. Done
 
 
