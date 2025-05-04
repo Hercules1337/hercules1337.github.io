@@ -1,4 +1,4 @@
-## Machines Tier/Difficulty 🟢 🟡 🔴
+## Machines: Tier/Difficulty: Completion Status (Done, In Progress, Failed) 🟢 🟡 🔴
 
 ### Tier 0: The key is a strong foundation
 #### Starting Point
