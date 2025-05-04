@@ -4,7 +4,7 @@
 1. Meow
 * Nmap used to discover open ports, services and more.
 * Telnet can be logged in with "root" without a password just with this command below
-* _telnet IP_
+* _$~telnet IP_
 
 2. Fawn
 3. Dancing
