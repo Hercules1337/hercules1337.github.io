@@ -167,7 +167,7 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 - If you're missing any of these, run: _$~sudo apt install seclists_
 
 - Full gobuster command
-  - gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt -x php -t 50
+  - _$~gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt -x php -t 50_
 - Example results
   - /admin.php 
   - /index.php
