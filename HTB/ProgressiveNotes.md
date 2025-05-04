@@ -127,9 +127,17 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
  
 _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank password --> successfully entered RDP session_
 
-
-
 ## 6. Preignition
+Directory busting is a method used during web reconnaissance to discover hidden directories and files on a web server by brute-forcing common paths using a wordlist.
+Tools for Directory Busting
+
+| Tool        | Description                           |
+| :---------- | :------------------------------------ |
+| `gobuster`  | Fast and modern directory bruteforcer |
+| `ffuf`      | Flexible Fuzzing Tool                 |
+| `dirbuster` | GUI-based tool from OWASP             |
+| `dirb`      | Lightweight command-line brute tool   |
+
 ## 7. Mongod
 ## 8. Synced
 ## 9. Appointment
