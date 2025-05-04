@@ -17,32 +17,32 @@
   - List directory with _$~ls_ and then grab flag with _$~cat_ --> _$~cat flag.txt_
 
 #### 2. Fawn
-3. Dancing
-4. Redeemer
-5. Explosion
-6. Preignition
-7. Mongod
-8. Synced
-9. Appointment
+#### 3. Dancing
+#### 4. Redeemer
+#### 5. Explosion
+#### 6. Preignition
+#### 7. Mongod
+#### 8. Synced
+#### 9. Appointment
 
 * * *
 
-10. Squel
-11. Crocodile
-12. Responder
-13. Three
-14. Ignition
-15. Bike
-16. Funnel
-17. Pennyworth
-18. Tactics
-19. Archetype
-20. Oopsie
-21. Vaccine
-22. Unified
-23. Included
-24. Markup
-25. Base
+#### 10. Squel
+#### 11. Crocodile
+#### 12. Responder
+#### 13. Three
+#### 14. Ignition
+#### 15. Bike
+#### 16. Funnel
+#### 17. Pennyworth
+#### 18. Tactics
+#### 19. Archetype
+#### 20. Oopsie
+#### 21. Vaccine
+#### 22. Unified
+#### 23. Included
+#### 24. Markup
+#### 25. Base
 
 
 
