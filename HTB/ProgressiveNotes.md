@@ -2,6 +2,10 @@
 
 ### Machines
 1. Meow
+* Nmap used to discover open ports, services and more.
+* Telnet can be logged in with "root" without a password
+* "telnet <IP>"
+
 2. Fawn
 3. Dancing
 4. Redeemer
