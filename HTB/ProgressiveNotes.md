@@ -64,6 +64,17 @@
 - Redis is a super-fast, in-memory key-value database — it's like a giant dictionary stored in RAM that apps use to quickly save and look up small bits of data.
   - Think: key → value storage, but lightning fast and temporary (unless configured for persistence).
   - Commonly used for: caching, session storage, real-time data.
+ 
+- Common commands for redis
+| **Command**              | **Description**                      |
+| ------------------------ | ------------------------------------ |
+| `SET <key> <value>`      | Set a key-value pair                 |
+| `GET <key>`              | Retrieve the value of a key          |
+| `DEL <key>`              | Delete a key                         |
+| `KEYS <pattern>`         | List all keys matching a pattern     |
+| `EXPIRE <key> <seconds>` | Set a timeout for a key (in seconds) |
+| `MGET <key1> <key2>`     | Get multiple keys                    |
+| `FLUSHALL`               | Delete all keys in the database      |
 
 
 
