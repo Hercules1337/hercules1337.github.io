@@ -1,7 +1,7 @@
 # Notes as I go...
 
 ## Machines
-### 1. Meow
+## 1. Meow
 - Telnet is a network protocol and command-line tool that allows you to connect to remote machines over TCP port 23. It gives you a text-based shell or interface, assuming the service is running and doesn’t require strict authentication. SSH has replaced Telnet
 - Nmap is used to discover open ports, services and more.
 - nmap command used for easy machine --> _$~nmap -sV -O -Pn -n -p- -T5 TargetIP_
@@ -17,7 +17,7 @@
   - Then login with "root", no password needed
   - List directory with _$~ls_ and then grab flag with _$~cat_ --> _$~cat flag.txt_
 
-### 2. Fawn
+## 2. Fawn
 - FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server.
 - Common FTP Commands (interactive shell):
   - -?: help menu
@@ -35,7 +35,7 @@
 
 - Use "~sudo ftp TargetIP" if downloads are not working
 
-### 3. Dancing
+## 3. Dancing
 - SMB (Server Message Block) is a network file sharing protocol that allows systems (especially Windows) to:
   - Share files
   - Access printers
@@ -59,11 +59,6 @@
   - pwd: Show current directory
   - exit: Quit the session
    
-
-
-
-
-
 ### 4. Redeemer
 ### 5. Explosion
 ### 6. Preignition
