@@ -60,7 +60,14 @@
   - pwd: Show current directory
   - exit: Quit the session
    
-### 4. Redeemer
+## 4. Redeemer
+- Redis is a super-fast, in-memory key-value database — it's like a giant dictionary stored in RAM that apps use to quickly save and look up small bits of data.
+  - Think: key → value storage, but lightning fast and temporary (unless configured for persistence).
+  - Commonly used for: caching, session storage, real-time data.
+
+
+
+
 ### 5. Explosion
 ### 6. Preignition
 ### 7. Mongod
