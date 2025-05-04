@@ -18,6 +18,23 @@
   - List directory with _$~ls_ and then grab flag with _$~cat_ --> _$~cat flag.txt_
 
 ### 2. Fawn
+- FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server.
+- Common FTP Commands (interactive shell):
+  - -?: help menu
+  - After connecting (ftp <IP>), you can use:
+  - ls: List files
+  - get filename: Download file
+  - put filename: Upload file
+  - cd dir: Change directory
+  - exit / bye: Disconnect
+ 
+- Authentication with FTP
+  - Standard user+pass
+  - name: anonymous
+  - pass: blank or email
+
+
+
 ### 3. Dancing
 ### 4. Redeemer
 ### 5. Explosion
