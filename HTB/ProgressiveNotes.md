@@ -97,7 +97,7 @@
  
 _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 
-### 5. Explosion
+## 5. Explosion
 - Remote Desktop Protocol (RDP) allows remote graphical access to Windows systems. It's mostly used by administrators and help desks to control systems across a network.
 
 #### Tools to Access RDP
@@ -129,29 +129,29 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 
 
-### 6. Preignition
-### 7. Mongod
-### 8. Synced
-### 9. Appointment
+## 6. Preignition
+## 7. Mongod
+## 8. Synced
+## 9. Appointment
 
 * * *
 
-### 10. Squel
-### 11. Crocodile
-### 12. Responder
-### 13. Three
-### 14. Ignition
-### 15. Bike
-### 16. Funnel
-### 17. Pennyworth
+## 10. Squel
+## 11. Crocodile
+## 12. Responder
+## 13. Three
+## 14. Ignition
+## 15. Bike
+## 16. Funnel
+## 17. Pennyworth
 ### 18. Tactics
-### 19. Archetype
-### 20. Oopsie
-### 21. Vaccine
-### 22. Unified
-### 23. Included
-### 24. Markup
-### 25. Base
+## 19. Archetype
+## 20. Oopsie
+## 21. Vaccine
+## 22. Unified
+## 23. Included
+## 24. Markup
+## 25. Base
 
 
 
