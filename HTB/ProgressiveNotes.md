@@ -3,6 +3,7 @@
 ### Machines
 1. Meow
 * Nmap used to discover open ports, services and more.
+* nmap command used for easy machine --> _$~nmap -sV -O -sC -Pn -n -T5 IP_
 * Telnet can be logged in with "root" without a password just with this command below
 * _$~telnet IP_
 
