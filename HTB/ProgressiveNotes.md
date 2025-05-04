@@ -1,7 +1,7 @@
 ## Notes as I go...
 
 ### Machines
-1. Meow
+#### 1. Meow
 - Nmap used to discover open ports, services and more.
 - nmap command used for easy machine --> _$~nmap -sV -O -Pn -n -p- -T5 TargetIP_
   - -sV: Service version detection
@@ -16,7 +16,7 @@
   - Then login with "root", no password needed
   - List directory with _$~ls_ and then grab flag with _$~cat_ --> _$~cat flag.txt_
 
-2. Fawn
+#### 2. Fawn
 3. Dancing
 4. Redeemer
 5. Explosion
