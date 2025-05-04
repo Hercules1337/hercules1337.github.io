@@ -1,6 +1,6 @@
 ## Machines: Tier/Difficulty: Completion Status (Done 🟢, In Progress 🟡, Failed 🔴)
 ### Starting Point
-### Tier 0: The key is a strong foundation
+#### Tier 0: The key is a strong foundation
 1. ~~Meow~~ (Very Easy) 🟢
 2. ~~Fawn~~ (Very Easy) 🟢
 3. ~~Dancing~~ (Very Easy) 🟢
@@ -10,7 +10,7 @@
 7. ~~Mongod~~ (Very Easy) 🟢
 8. ~~Synced~~ (Very Easy) 🟢
 
-### Tier 1: You need to walk before you can run
+#### Tier 1: You need to walk before you can run
 9. ~~Appointment~~ (Very Easy) 🟢
 10. Squel (Very Easy) 🟡
 11. Crocodile (Very Easy) 🟡
@@ -22,8 +22,7 @@
 17. Pennyworth (Very Easy) 🟡
 18. Tactics (Very Easy) 🟡
 
-### Tier 2: Don't forget to contemplate
-
+#### Tier 2: Don't forget to contemplate
 19. Archetype 🟡
 20. Oopsie 🟡
 21. Vaccine 🟡
