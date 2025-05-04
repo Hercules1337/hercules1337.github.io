@@ -11,7 +11,7 @@
 7. ~~Mongod~~ (Very Easy)
 8. ~~Synced~~ (Very Easy)
 
-### Tier 1
+### Tier 1: You need to walk before you can run
 9. ~~Appointment~~ (Very Easy)
 10. Squel (Very Easy)
 11. Crocodile (Very Easy)
