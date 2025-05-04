@@ -206,7 +206,10 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
   - rsync helps you copy files and folders between computers, or just make sure two places have the same files — kind of like a smarter, faster version of copy-paste that can work over the internet.
   - rsync typically uses SSH for authentication.
     - But in some CTF scenarios, rsync may allow anonymous access (no password) — especially if it’s running as a public rsync daemon.
-
+###  General Syntax for Remote Access
+_$~ rsync [options] rsync://IP_or_Hostname/module/_
+- The module is like a shared folder offered by the rsync server.
+  - You don’t really "log in" and "navigate" like SSH or FTP. Instead, you list what's shared, then pull files from it.
 
 
 ## 9. Appointment
