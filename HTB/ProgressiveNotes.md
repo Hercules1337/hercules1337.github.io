@@ -175,6 +175,12 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 - Check admin page for default credentials -->  user:admin pass:admin
 
 ## 7. Mongod
+
+
+
+
+
+
 ## 8. Synced
 ## 9. Appointment
 
