@@ -46,11 +46,18 @@
   - 139 (older NetBIOS session)
  
 - Command to login to smb (using _smbclient_)
-  - smbclient -L //_TargetIP_ -N
+  - $~smbclient -L //_TargetIP_ -N
     - -L: List shares
     - -N: No password (anon login)
   - Connect to a share
-    - smbclient //_TargetIP_/_share_name_ -N
+    - $~smbclient //_TargetIP_/_share_name_ -N
+   
+- Common smbclient commands
+  - ls: List files
+  - cd dir: Change directory
+  - get file: Download a file (e.g. get flag.txt)
+  - pwd: Show current directory
+  - exit: Quit the session
    
 
 
