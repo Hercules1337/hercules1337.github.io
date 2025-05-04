@@ -101,7 +101,7 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 - Remote Desktop Protocol (RDP) allows remote graphical access to Windows systems. It's mostly used by administrators and help desks to control systems across a network.
 - Tools to Access RDP
 | Tool       | Platform    | Description                         |
-|:---------- |:----------- |:----------------------------------- |
+|:-----------|:------------|:------------------------------------|
 | `mstsc`    | Windows     | Built-in GUI RDP client             |
 | `xfreerdp` | Linux/macOS | Modern, feature-rich RDP client     |
 | `rdesktop` | Linux       | Older RDP client                    |
