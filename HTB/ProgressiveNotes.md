@@ -108,10 +108,9 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 | `xfreerdp` | Linux/macOS | Modern, feature-rich RDP client     |
 | `rdesktop` | Linux       | Older RDP client                    |
 | `Remmina`  | Linux (GUI) | RDP + VNC GUI client for Linux      |
-| `Nmap`     | Any         | Port scanner and RDP detection tool |
 
 #### Common Commands & Switches
-##### xfreerdp (most modern and flexible)
+- xfreerdp (most modern and flexible)
 
 | Switch              | Description              |
 | :------------------ | :----------------------- |
@@ -122,6 +121,15 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 | `/f`                | Fullscreen mode          |
 | `/clipboard`        | Enable clipboard sharing |
 | `/drive:share,path` | Share local drive to RDP |
+
+- Logging in to RDP (Linux): REQUIRES CREDENTIALS (/u:)
+  - With _xfreerdp_
+  - $~xfreerdp /u:admin /p:password /v:_TargetIP_ /cert:ignore
+  - With _rdesktop_
+  - $~rdesktop -u admin -p password _TargetIP_
+ 
+##### _xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank password --> successfully entered RDP session_
+
 
 
 ### 6. Preignition
