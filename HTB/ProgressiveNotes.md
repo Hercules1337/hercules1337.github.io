@@ -2,6 +2,7 @@
 
 ## Machines
 ### 1. Meow
+- Telnet is a network protocol and command-line tool that allows you to connect to remote machines over TCP port 23. It gives you a text-based shell or interface, assuming the service is running and doesn’t require strict authentication.
 - Nmap used to discover open ports, services and more.
 - nmap command used for easy machine --> _$~nmap -sV -O -Pn -n -p- -T5 TargetIP_
   - -sV: Service version detection
