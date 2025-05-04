@@ -10,7 +10,8 @@
   - -n: Don’t resolve DNS (faster)
   - -p-: Scans all TCP ports
   - -T5: Fastest timing (safe for most HTB machines)
--Telnet can be logged in with "root" without a password just with this command below
+  
+- Telnet can be logged in with "root" without a password just with this command below
   - _$~telnet IP_
   - Then login with "root", no password needed
 
