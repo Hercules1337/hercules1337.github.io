@@ -1,4 +1,4 @@
-#Machines
+# Machines
 ## Starting Point
 ### Tier 0: The key is a strong foundation
 1. Meow
