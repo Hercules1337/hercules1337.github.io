@@ -99,7 +99,8 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 
 ### 5. Explosion
 - Remote Desktop Protocol (RDP) allows remote graphical access to Windows systems. It's mostly used by administrators and help desks to control systems across a network.
-- Tools to Access RDP
+
+#### Tools to Access RDP
 
 | Tool       | Platform    | Description                         |
 |:-----------|:------------|:------------------------------------|
@@ -108,6 +109,20 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 | `rdesktop` | Linux       | Older RDP client                    |
 | `Remmina`  | Linux (GUI) | RDP + VNC GUI client for Linux      |
 | `Nmap`     | Any         | Port scanner and RDP detection tool |
+
+#### Common Commands & Switches
+##### xfreerdp (most modern and flexible)
+
+| Switch              | Description              |
+| :------------------ | :----------------------- |
+| `/v:IP`             | Target RDP IP address    |
+| `/u:username`       | Username                 |
+| `/p:password`       | Password                 |
+| `/cert:ignore`      | Ignore SSL cert warnings |
+| `/f`                | Fullscreen mode          |
+| `/clipboard`        | Enable clipboard sharing |
+| `/drive:share,path` | Share local drive to RDP |
+
 
 ### 6. Preignition
 ### 7. Mongod
