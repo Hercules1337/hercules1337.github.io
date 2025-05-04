@@ -122,8 +122,8 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 | `/clipboard`        | Enable clipboard sharing |
 | `/drive:share,path` | Share local drive to RDP |
 
-- Logging in to RDP (Linux): REQUIRES CREDENTIALS (/u:)
-  - $~xfreerdp /u:_username_ /p:password /v:_TargetIP_ /cert:ignore (dont need to include _/p:password_)
+- Logging in to RDP (Linux): REQUIRES CREDENTIALS (/u:username) BUT DOES NOT REQUIRE PASSWORD
+  - $~xfreerdp /u:_username_ /p:password /v:_TargetIP_ /cert:ignore
  
 _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank password --> successfully entered RDP session_
 
