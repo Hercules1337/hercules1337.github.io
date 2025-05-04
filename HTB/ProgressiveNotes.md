@@ -129,8 +129,8 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 ## 6. Preignition
 - NGINX is a high-performance, open-source web server and reverse proxy server. It's widely used to serve websites, APIs, and static files.
-- NGINX delivers web pages to your browser and can also forward requests to backend services (like APIs or databases).
-- Directory busting is a method used during web reconnaissance to discover hidden directories and files on a web server by brute-forcing common paths using a wordlist.
+  - NGINX delivers web pages to your browser and can also forward requests to backend services (like APIs or databases).
+- Directory busting is a method used during web reconnaissance to discover hidden directories and files on a web server (NGINX) by brute-forcing common paths using a wordlist.
 **Tools for Directory Busting**
 
 | Tool        | Description                           |
@@ -142,15 +142,17 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 **Common Gobuster Switches**  
 
-| Switch          | Description                                |
-| :-------------- | :----------------------------------------- |
-| `-u URL`        | Target URL                                 |
-| `-w wordlist`   | Path to wordlist                           |
-| `-x php,txt`    | File extensions to try                     |
-| `-t 50`         | Threads (adjust for speed)                 |
-| `-o result.txt` | Output results to a file                   |
-| `-r`            | Do not follow redirects                    |
-| `-k`            | Skip SSL cert verification (https targets) |
+| Switch | Description                                             | Example Value                          |
+| :----- | :------------------------------------------------------ | :------------------------------------- |
+| `dir`  | **Answer:** Tells Gobuster to perform directory busting | *(no value needed)*                    |
+| `-w`   | Wordlist path                                           | `/usr/share/wordlists/dirb/common.txt` |
+| `-u`   | Target URL                                              | `http://10.10.10.10/`                  |
+| `-x`   | **Answer:** Add file extensions to check                | `php`                                  |
+| `-t`   | Number of concurrent threads                            | `50`                                   |
+| `-o`   | Output file for results                                 | `found_dirs.txt`                       |
+| `-k`   | Ignore SSL certificate warnings                         | *(no value needed)*                    |
+| `-s`   | Expected HTTP status codes                              | `200,204,301,302,403`                  |
+| `-e`   | Expanded output (shows full URL)                        | *(no value needed)*                    |
 
 **Common Wordlists (Full Paths on Kali/Parrot)**
 
@@ -164,7 +166,13 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 - If you're missing any of these, run: _$~sudo apt install seclists_
 
-  
+- Full gobuster command
+  - gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt -x php -t 50
+- Example results
+  - /admin.php 
+  - /index.php
+
+- Check admin page for default credentials -->  user:admin pass:admin
 
 ## 7. Mongod
 ## 8. Synced
