@@ -89,16 +89,25 @@
   - TYPE key_name: checks type of a key
   - GET key_name: get value of a key
  
-- Extracting data
-- To extract data from Redis, it depends on the type of data stored. Here are some common scenarios:
+- Extracting data: To extract data from Redis, it depends on the type of data stored. Here are some common scenarios:
   - GET flag: for a string
   - LRANGE list_name 0 -1: for a list
   - HGETALL hash_name: for a hash
   - SMEMBERS set_name: for a set
  
-_$~redis-cli -h TargetIP -p 6379 --> KEYS * --> GET flag_
+_$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 
 ### 5. Explosion
+- Remote Desktop Protocol (RDP) allows remote graphical access to Windows systems. It's mostly used by administrators and help desks to control systems across a network.
+- Tools to Access RDP
+| Tool       | Platform    | Description                         |
+|:---------- |:----------- |:----------------------------------- |
+| `mstsc`    | Windows     | Built-in GUI RDP client             |
+| `xfreerdp` | Linux/macOS | Modern, feature-rich RDP client     |
+| `rdesktop` | Linux       | Older RDP client                    |
+| `Remmina`  | Linux (GUI) | RDP + VNC GUI client for Linux      |
+| `Nmap`     | Any         | Port scanner and RDP detection tool |
+
 ### 6. Preignition
 ### 7. Mongod
 ### 8. Synced
