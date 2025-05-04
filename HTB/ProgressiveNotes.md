@@ -202,8 +202,10 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 > When attempting this machine, the current installed version of mongosh was not compatible with the MondoDB server. There was no workaround with the HTB Pwnbox. I could not downgrade mongosh, nor could I install mongo. Regardless, I understood the machine and completed it by following the write-up. Thank you.
 
 ## 8. Synced
-
-
+- rsync is a fast and versatile file copying tool used to synchronize files and directories between two locations over a network or locally. It uses a delta-transfer algorithm to send only the changed parts of files.
+  - rsync helps you copy files and folders between computers, or just make sure two places have the same files — kind of like a smarter, faster version of copy-paste that can work over the internet.
+  - rsync typically uses SSH for authentication.
+    - But in some CTF scenarios, rsync may allow anonymous access (no password) — especially if it’s running as a public rsync daemon.
 
 
 
