@@ -275,7 +275,7 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 2. Notice port 80 http is open.
 3. Check for web application
 4. Perfom directory busting --> _$~gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt
-5. Conduct SQL injection on login form --> _admin'#_
+5. Conduct SQL injection on login form --> _admin' #_
 6. Done
 
 
