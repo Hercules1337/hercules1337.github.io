@@ -21,7 +21,7 @@
 - FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server.
 - Common FTP Commands (interactive shell):
   - -?: help menu
-  - After connecting (ftp <IP>), you can use:
+  - After connecting (ftp _TargetIP_), you can use:
   - ls: List files
   - get filename: Download file
   - put filename: Upload file
@@ -33,9 +33,30 @@
   - name: anonymous
   - pass: blank or email
 
-
+- Use "~sudo ftp TargetIP" if downloads are not working
 
 ### 3. Dancing
+- SMB (Server Message Block) is a network file sharing protocol that allows systems (especially Windows) to:
+  - Share files
+  - Access printers
+  - Communicate between nodes (file transfers, authentication, etc.)
+
+- Common Ports
+  - 445 (Common, modern SMB)
+  - 139 (older NetBIOS session)
+ 
+- Command to login to smb (using _smbclient_)
+  - smbclient -L //_TargetIP_ -N
+    - -L: List shares
+    - -N: No password (anon login)
+  - Connect to a share
+    - smbclient //_TargetIP_/_share_name_ -N
+   
+
+
+
+
+
 ### 4. Redeemer
 ### 5. Explosion
 ### 6. Preignition
