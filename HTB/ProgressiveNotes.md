@@ -211,6 +211,26 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 - The module is like a shared folder offered by the rsync server.
   - You don’t really "log in" and "navigate" like SSH or FTP. Instead, you list what's shared, then pull files from it.
 
+### Common rsync Commands and Switches
+
+| Switch | Name               | Description                                                                 |
+|:-------|:-------------------|:----------------------------------------------------------------------------|
+| -a     | Archive            | Recursively copy and preserve symbolic links, permissions, modification times, etc. |
+| -v     | Verbose            | Show detailed output of what `rsync` is doing                              |
+| -z     | Compression        | Compress file data during the transfer                                      |
+| -r     | Recursive          | Copy directories recursively (included in `-a`)                             |
+| -e     | Remote shell       | Specify the remote shell to use (e.g., `-e ssh`)                            |
+| -P     | Progress           | Show progress and allow resume of interrupted transfers (`--partial --progress`) |
+| --list-only | List only     | Show what would be transferred, without actually copying                    |
+| --delete | Delete           | Delete extraneous files from destination dirs                               |
+| -n     | Dry run            | Simulate the transfer, showing what would happen without making changes     |
+
+### Example Steps for CTF
+1. rsync rsync://10.10.10.10/
+2. rsync --list-only rsync://10.10.10.10/public/
+3. rsync rsync://10.10.10.10/public/flag.txt .
+4. Done
+
 
 ## 9. Appointment
 
