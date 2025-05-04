@@ -66,8 +66,9 @@
   - Commonly used for: caching, session storage, real-time data.
  
 - Common commands for redis
+
 | Command                 | Action                          |
-| :---------------------- | :------------------------------ |
+|:------------------------|:--------------------------------|
 | `SET key value`         | Set a key with a value          |
 | `GET key`               | Get the value of a key          |
 | `DEL key`               | Delete a key                    |
