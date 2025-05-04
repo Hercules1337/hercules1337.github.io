@@ -175,6 +175,28 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 - Check admin page for default credentials -->  user:admin pass:admin
 
 ## 7. Mongod
+- MongoDB is a NoSQL document-based database. Instead of storing data in rows and columns (like SQL), it uses JSON-like documents. It's used for flexible, scalable data storage.
+  - MongoDB is a database that stores data in key-value pairs inside collections, not tables.
+**Common MongoDB Shell Commands**
+
+| Command                   | Description                      | Example Value       |
+| :------------------------ | :------------------------------- | :------------------ |
+| `show dbs`                | List all databases               | –                   |
+| `use`                     | Switch to a database             | `use mydatabase`    |
+| `show collections`        | List collections in current DB   | –                   |
+| `db`                      | Show current database            | –                   |
+| `db.collection.find()`    | View all documents in collection | `db.users.find()`   |
+| `db.collection.count()`   | Count documents in a collection  | `db.flags.count()`  |
+| `db.collection.findOne()` | Show one document                | `db.flag.findOne()` |
+| `db.collection.drop()`    | Delete collection (be careful)   | –                   |
+| `exit`                    | Leave the shell                  | –                   |
+
+**How to Login, Navigate, and Extract Data**
+1. _$~mongo TargetIP:port_ --> If unauthenticated and exposed, this connects you directly.
+2.  _> show dbs_
+3.  _> use database_name_
+4.  _>show collections_
+5.  _>db.collection_name.find().pretty()_
 
 
 
