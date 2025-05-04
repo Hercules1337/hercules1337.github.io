@@ -66,15 +66,17 @@
   - Commonly used for: caching, session storage, real-time data.
  
 - Common commands for redis
-| **Command**              | **Description**                      |
-| ------------------------ | ------------------------------------ |
-| `SET <key> <value>`      | Set a key-value pair                 |
-| `GET <key>`              | Retrieve the value of a key          |
-| `DEL <key>`              | Delete a key                         |
-| `KEYS <pattern>`         | List all keys matching a pattern     |
-| `EXPIRE <key> <seconds>` | Set a timeout for a key (in seconds) |
-| `MGET <key1> <key2>`     | Get multiple keys                    |
-| `FLUSHALL`               | Delete all keys in the database      |
+| Command                 | Action                          |
+| :---------------------- | :------------------------------ |
+| `SET key value`         | Set a key with a value          |
+| `GET key`               | Get the value of a key          |
+| `DEL key`               | Delete a key                    |
+| `EXPIRE key seconds`    | Set a timeout for a key         |
+| `HSET hash field value` | Set a field in a hash           |
+| `HGET hash field`       | Get a field from a hash         |
+| `KEYS pattern`          | List all keys matching pattern  |
+| `FLUSHALL`              | Remove all keys in the database |
+
 
 
 
