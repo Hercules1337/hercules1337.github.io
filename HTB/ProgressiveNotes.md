@@ -14,7 +14,7 @@
 - Telnet can be logged in with "root" without a password just with this command below
   - _$~telnet IP_
   - Then login with "root", no password needed
-  - List directory with _~ls_ and then grab flag with _~cat_
+  - List directory with _~ls_ and then grab flag with _~cat_ --> _$~cat flag.txt
 
 2. Fawn
 3. Dancing
