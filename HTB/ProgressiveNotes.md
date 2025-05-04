@@ -199,9 +199,14 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 5.  _>db.collection_name.find().pretty()_
 
 ### Note
-> When attempting this machine, the current installed version of mongosh was not compatible with the MondoDB server. There was no workaround with the HTB Pwnbox. I couldnt downgrade mongosh nor could I install mongo. Regardless I understood the machine and completed it by following the write-up. Thank you.
+> When attempting this machine, the current installed version of mongosh was not compatible with the MondoDB server. There was no workaround with the HTB Pwnbox. I could not downgrade mongosh, nor could I install mongo. Regardless, I understood the machine and completed it by following the write-up. Thank you.
 
 ## 8. Synced
+
+
+
+
+
 ## 9. Appointment
 
 * * *
