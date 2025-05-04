@@ -128,8 +128,10 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank password --> successfully entered RDP session_
 
 ## 6. Preignition
-Directory busting is a method used during web reconnaissance to discover hidden directories and files on a web server by brute-forcing common paths using a wordlist.
-Tools for Directory Busting
+- NGINX is a high-performance, open-source web server and reverse proxy server. It's widely used to serve websites, APIs, and static files.
+- NGINX delivers web pages to your browser and can also forward requests to backend services (like APIs or databases).
+- Directory busting is a method used during web reconnaissance to discover hidden directories and files on a web server by brute-forcing common paths using a wordlist.
+**Tools for Directory Busting**
 
 | Tool        | Description                           |
 | :---------- | :------------------------------------ |
@@ -137,6 +139,32 @@ Tools for Directory Busting
 | `ffuf`      | Flexible Fuzzing Tool                 |
 | `dirbuster` | GUI-based tool from OWASP             |
 | `dirb`      | Lightweight command-line brute tool   |
+
+**Common Gobuster Switches**  
+
+| Switch          | Description                                |
+| :-------------- | :----------------------------------------- |
+| `-u URL`        | Target URL                                 |
+| `-w wordlist`   | Path to wordlist                           |
+| `-x php,txt`    | File extensions to try                     |
+| `-t 50`         | Threads (adjust for speed)                 |
+| `-o result.txt` | Output results to a file                   |
+| `-r`            | Do not follow redirects                    |
+| `-k`            | Skip SSL cert verification (https targets) |
+
+**Common Wordlists (Full Paths on Kali/Parrot)**
+
+| Wordlist                        | Path                                                                    | Purpose                    |
+| :------------------------------ | :---------------------------------------------------------------------- | :------------------------- |
+| `common.txt`                    | `/usr/share/wordlists/dirb/common.txt`                                  | Basic wordlist             |
+| `big.txt`                       | `/usr/share/wordlists/dirb/big.txt`                                     | Larger brute-force list    |
+| `directory-list-2.3-medium.txt` | `/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`          | Popular medium list        |
+| `raft-medium-directories.txt`   | `/usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt` | Structured wordlist        |
+| `common.txt (SecLists)`         | `/usr/share/seclists/Discovery/Web-Content/common.txt`                  | Great general-purpose list |
+
+- If you're missing any of these, run: _$~sudo apt install seclists_
+
+  
 
 ## 7. Mongod
 ## 8. Synced
