@@ -22,3 +22,13 @@
 16. Funnel (Very Easy) 🟡
 17. Pennyworth (Very Easy) 🟡
 18. Tactics (Very Easy) 🟡
+
+### Tier 2: Don't forget to contemplate
+
+19. Archetype 🟡
+20. Oopsie 🟡
+21. Vaccine 🟡
+22. Unified 🟡
+23. Included 🟡
+24. Markup 🟡
+25. Base 🟡
