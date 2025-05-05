@@ -340,6 +340,21 @@ Steps to completion.
 
 ## 11. Crocodile
 
+What Nmap scanning switch employs the use of default scripts during a scan? _-sC_
+
+### Methodology
+- Nmap scan is performed. _~$ nmap -sV -sC -O -Pn -n -p- -T5 10.129.138.235_
+  - Port 21 (ftp) and port 80 (http) is open.
+- Try to find useful data with ftp.
+  - _~$ ftp TargetIP_
+    - Found _allowed.userlist_ and _allowed.userlist.passwd_
+    - username "admin" discovered
+    - Extract files with _get_ --> _~$ get allowed.userlist_
+- Perform directory busting on http web application.
+  - use gobuster with `-x` switch to look for .php filetypes
+  - _~$ gobuster dir -u TargetIP -w /usr/share/wordlists/dir/common/txt -x php
+
+
 
 * * *
 
