@@ -361,7 +361,12 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 * * *
 
 ## 12. Responder
-
+### Remote File Inclusion (RFI)
+- RFI is when a web app loads and executes a file from an external source (like your server) due to insecure code like include($_GET['page']); in PHP.
+  - Goal: Trick the server into loading your malicious script from a remote URL.
+### Remote Code Execution (RCE)
+- RCE is when an attacker can run arbitrary commands or code on a server, often leading to full control.
+  - RCE is the end goal of many attacks — like RFI, LFI, insecure deserialization, or command injection.
 
 
 
