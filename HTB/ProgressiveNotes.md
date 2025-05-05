@@ -356,6 +356,7 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
     - _`/login.php` and `/config.php`_ discovered --> attempting login with credentials on `/login.php`
     - admin credentials are successful
 - _**Flag Captured**_
+![Branching](https://camo.githubusercontent.com/2aba4859623e4bf900f05f07356208a661c95e0c806f5f26d783e17249e301ed/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6e65746273642e737667))
 
 * * *
 
