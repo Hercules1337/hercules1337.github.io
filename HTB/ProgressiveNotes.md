@@ -355,13 +355,21 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
   - _~$ gobuster dir -u TargetIP -w /usr/share/wordlists/dirb/common.txt -x php
     - _`/login.php` and `/config.php`_ discovered --> attempting login with credentials on `/login.php`
     - admin credentials are successful
-- `_**Flag Captured**_
+- _**Flag Captured**_
+
+* * *
+
+## 12. Responder
+
+
+
+
+
 
 
 
 * * *
 
-## 12. Responder
 ## 13. Three
 ## 14. Ignition
 ## 15. Bike
