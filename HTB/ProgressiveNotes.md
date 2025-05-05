@@ -17,6 +17,8 @@
   - Then login with "root", no password needed
   - List directory with _$~ls_ and then grab flag with _$~cat_ --> _$~cat flag.txt_
 
+* * *
+
 ## 2. Fawn
 - FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server.
 - Common FTP Commands (interactive shell):
@@ -34,6 +36,8 @@
   - pass: blank or email
 
 - Use "~sudo ftp TargetIP" if downloads are not working
+
+* * *
 
 ## 3. Dancing
 - SMB (Server Message Block) is a network file sharing protocol that allows systems (especially Windows) to:
@@ -59,7 +63,9 @@
   - get file: Download a file (e.g. get flag.txt)
   - pwd: Show current directory
   - exit: Quit the session
-   
+
+* * *
+
 ## 4. Redeemer
 - Redis is a super-fast, in-memory key-value database — it's like a giant dictionary stored in RAM that apps use to quickly save and look up small bits of data.
   - Think: key → value storage, but lightning fast and temporary (unless configured for persistence).
@@ -97,6 +103,8 @@
  
 _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
 
+* * *
+
 ## 5. Explosion
 - Remote Desktop Protocol (RDP) allows remote graphical access to Windows systems. It's mostly used by administrators and help desks to control systems across a network.
 
@@ -126,6 +134,8 @@ _$~redis-cli -h TargetIP --> KEYS * --> GET flag_
   - $~xfreerdp /u:_username_ /p:password /v:_TargetIP_ /cert:ignore
  
 _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank password --> successfully entered RDP session_
+
+* * *
 
 ## 6. Preignition
 - NGINX is a high-performance, open-source web server and reverse proxy server. It's widely used to serve websites, APIs, and static files.
@@ -174,6 +184,8 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 - Check admin page for default credentials -->  user:admin pass:admin
 
+* * *
+
 ## 7. Mongod
 - MongoDB is a NoSQL document-based database. Instead of storing data in rows and columns (like SQL), it uses JSON-like documents. It's used for flexible, scalable data storage.
   - MongoDB is a database that stores data in key-value pairs inside collections, not tables.
@@ -200,6 +212,8 @@ _$~xfreerdp /v:10.129.1.13 /u:administrator /cert:ignore --> enter blank passwor
 
 ### Note
 > When attempting this machine, the current installed version of mongosh was not compatible with the MondoDB server. There was no workaround with the HTB Pwnbox. I could not downgrade mongosh, nor could I install mongo. Regardless, I understood the machine and completed it by following the write-up. Thank you.
+
+* * *
 
 ## 8. Synced
 - rsync is a fast and versatile file copying tool used to synchronize files and directories between two locations over a network or locally. It uses a delta-transfer algorithm to send only the changed parts of files.
@@ -230,6 +244,8 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 2. rsync --list-only rsync://10.10.10.10/public/ (List Files Inside a Module ("public")
 3. rsync -P rsync://10.10.10.10/public/flag.txt . (This will download "flag.txt" to your current directory.)
 4. Done
+
+* * *
 
 ## 9. Appointment
 - SQL (Structured Query Language) is a standard language used to manage and manipulate relational databases by performing tasks like querying data, updating records, or deleting tables.
@@ -278,6 +294,8 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 5. Conduct SQL injection on login form --> _admin' #_
 6. Done
 
+* * *
+
 ## 10. Squel
 MariaDB is an open-source relational database management system (RDBMS), a fork of MySQL. It uses SQL (Structured Query Language) to manage data and is often used in web applications. It's compatible with MySQL, but has performance and licensing improvements.
 ### Accessing MariaDB commands
@@ -310,14 +328,21 @@ MariaDB is an open-source relational database management system (RDBMS), a fork 
 
 Steps to completion.
 1. _~$ nmap -sV -sC -O -Pn -n -T5 -p 3306 TargetIP_
-2. _~$ mysql -u
-
-
-
+2. _~$ mysql -h targetIP -u root_
+3. Logged into database
+4. _> show databases;_
+5. _> use htb;_
+6. _> show tables;_
+7. _> select * from config;_
+8. Flag captured
 
 * * *
 
 ## 11. Crocodile
+
+
+* * *
+
 ## 12. Responder
 ## 13. Three
 ## 14. Ignition
