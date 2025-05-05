@@ -271,19 +271,51 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 
 
 ### How to solve CTF
-1. Scan for open ports --> _$~nmap -sV -O -Pn -n -p- -T5 TargetIP_
+1. Scan for open ports --> _~$ nmap -sV -O -Pn -n -p- -T5 TargetIP_
 2. Notice port 80 http is open.
 3. Check for web application
 4. Perfom directory busting --> _$~gobuster dir -u http://IP_ADDRESS/ -w /usr/share/wordlists/dirb/common.txt
 5. Conduct SQL injection on login form --> _admin' #_
 6. Done
 
+## 10. Squel
+MariaDB is an open-source relational database management system (RDBMS), a fork of MySQL. It uses SQL (Structured Query Language) to manage data and is often used in web applications. It's compatible with MySQL, but has performance and licensing improvements.
+### Accessing MariaDB commands
+- Authenticated
+_~$ mysql -u root -p_
+- unauthenticated
+_~$ mysql -u root_
+
+### Common mysql Command-line Switches
+
+| Switch | Description                    | Example               |
+| :----- | :----------------------------- | :-------------------- |
+| `-u`   | Username                       | `-u root`             |
+| `-p`   | Prompt for password            | `-p`                  |
+| `-h`   | Host IP or hostname            | `-h 10.10.10.10`      |
+| `-P`   | Port number                    | `-P 3306`             |
+| `-e`   | Execute SQL statement and exit | `-e "SHOW DATABASES"` |
+
+### MariaDB/MySQL Basic SQL Syntax
+
+| Command                     | Description                        | Example                       |
+| :-------------------------- | :--------------------------------- | :---------------------------- |
+| `SHOW DATABASES;`           | List all databases                 | `SHOW DATABASES;`             |
+| `USE database_name;`        | Select a database to work with     | `USE testdb;`                 |
+| `SHOW TABLES;`              | List all tables in the selected DB | `SHOW TABLES;`                |
+| `DESCRIBE table;`           | Show structure of a table          | `DESCRIBE users;`             |
+| `SELECT * FROM table;`      | Show all data in a table           | `SELECT * FROM flag;`         |
+| `SELECT column FROM table;` | Get specific column data           | `SELECT username FROM users;` |
+
+Steps to completion.
+1. _~$ nmap -sV -sC -O -Pn -n -T5 -p 3306 TargetIP_
+2. _~$ mysql -u
 
 
 
 
 * * *
-## 10. Squel
+
 ## 11. Crocodile
 ## 12. Responder
 ## 13. Three
