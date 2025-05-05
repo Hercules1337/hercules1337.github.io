@@ -352,7 +352,7 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
     - Extract files with _get_ --> _~$ get allowed.userlist_
 - Perform directory busting on http web application.
   - use gobuster with `-x` switch to look for .php filetypes
-  - _~$ gobuster dir -u TargetIP -w /usr/share/wordlists/dir/common/txt -x php
+  - _~$ gobuster dir -u TargetIP -w /usr/share/wordlists/dirb/common.txt -x php
 
 
 
