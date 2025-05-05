@@ -281,11 +281,12 @@ _$~ rsync [options] rsync://IP_or_Hostname/module/_
 ## 10. Squel
 MariaDB is an open-source relational database management system (RDBMS), a fork of MySQL. It uses SQL (Structured Query Language) to manage data and is often used in web applications. It's compatible with MySQL, but has performance and licensing improvements.
 ### Accessing MariaDB commands
-- Authenticated
-_~$ mysql -u root -p_
-- unauthenticated
-_~$ mysql -u root_
-
+- Local
+  - Authenticated _~$ mysql -u root -p_
+  - unauthenticated _~$ mysql -u root_
+- Remote
+  - Authenticated _~$ mysql -h target_ip -u username -p_
+  - unauthenticated _~$ mysql -h target_ip_ **or if misconfigured** _~$ mysql -h target_ip -u root_
 ### Common mysql Command-line Switches
 
 | Switch | Description                    | Example               |
