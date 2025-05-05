@@ -286,7 +286,7 @@ MariaDB is an open-source relational database management system (RDBMS), a fork 
   - unauthenticated _~$ mysql -u root_
 - Remote
   - Authenticated _~$ mysql -h target_ip -u username -p_
-  - unauthenticated _~$ mysql -h target_ip_ **or if misconfigured** _~$ mysql -h target_ip -u root_
+  - unauthenticated _~$ mysql -h target_ip_ `or if misconfigured` _~$ mysql -h target_ip -u root_
 ### Common mysql Command-line Switches
 
 | Switch | Description                    | Example               |
