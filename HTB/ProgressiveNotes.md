@@ -367,12 +367,28 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 ### Remote Code Execution (RCE)
 - RCE is when an attacker can run arbitrary commands or code on a server, often leading to full control.
   - RCE is the end goal of many attacks — like RFI, LFI, insecure deserialization, or command injection.
-*** etc/hosts/
+### etc/hosts/
 - The /etc/hosts file is a local DNS override file used by your operating system to map domain names to IP addresses manually.
 - Why You Need It for HTB or CTF
   - HTB and CTF machines often ask you to access a web application by a hostname like internal.htb, dev.machine.htb, or admin.intranet.local. But these fake/internal domains don’t exist publicly, so:
     - Your system won’t resolve them using normal DNS.
     - Adding them to /etc/hosts forces your machine to treat them like real domains.
+### NT LAN Manager (NTLM)
+- NTLM (NT LAN Manager) is a Microsoft authentication protocol used to verify the identity of users and systems in Windows environments, especially older or internal networks.
+- How it works
+    - Client sends username to server.
+    - Server replies with a random challenge.
+    - Client hashes the password with the challenge and sends it back.
+    - Server checks this hash against its stored credentials (usually via a domain controller or local user list).
+- CTF & Pentesting Context
+| Use Case                 | Description                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------- |
+| **Hash Capture**         | You can capture NTLM hashes using responder, SMB relays, etc.                     |
+| **Cracking Hashes**      | Use tools like `hashcat` or `john` to crack NTLMv1/NTLMv2 hashes.                 |
+| **Pass-the-Hash**        | Authenticate using a stolen NTLM hash without knowing the password.               |
+| **Brute Force or Spray** | Try NTLM login against SMB, RDP, etc. using tools like `hydra` or `crackmapexec`. |
+
+  
 
 ### What to Look For During Testing
 | Indicator                                         | Description                                     |
@@ -402,8 +418,11 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 ### Methodology
 1. Perform nmap scan --> _nmap -sV -T5 TargetIP_ --> **Port 80 open, http service detected**
 - I noticed OpenSSL and PHP service and version discovered with nmap scan
-2. Access web service --> domain "unika.htb" resolved
-3. 
+2. Attempt to access web service using IP address, arrive to "unika.htb", but not able to connect
+3. Add "unika.htb" to `etc/hosts/` file
+4. Access web page --> PHP scripting language discovered using "Wappalyzer" broswer extension.
+5. Navigate web page, clicking different buttons and links, once I clicked on changing the web page language then URL parameters revealed that "page=" was being used to load in different languages.
+6. Attempting to perform LFI on "page=" parameter with this payload "../../../../../../../../windows/system32/drivers/etc/hosts" --> successful!  
 
 
 
