@@ -373,14 +373,15 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
   - HTB and CTF machines often ask you to access a web application by a hostname like internal.htb, dev.machine.htb, or admin.intranet.local. But these fake/internal domains don’t exist publicly, so:
     - Your system won’t resolve them using normal DNS.
     - Adding them to /etc/hosts forces your machine to treat them like real domains.
-### NT LAN Manager (NTLM)
+
+### New Technology LAN Manager (NTLM)
 - NTLM (NT LAN Manager) is a Microsoft authentication protocol used to verify the identity of users and systems in Windows environments, especially older or internal networks.
 - How it works
     - Client sends username to server.
     - Server replies with a random challenge.
     - Client hashes the password with the challenge and sends it back.
     - Server checks this hash against its stored credentials (usually via a domain controller or local user list).
-- CTF & Pentesting Context
+- CTF & Pentesting Context (NTLM)
 
 | Use Case                 | Description                                                                       |
 | ------------------------ | --------------------------------------------------------------------------------- |
@@ -391,7 +392,7 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 
   
 
-### What to Look For During Testing
+### What to Look For During Testing (LFI & RFI)
 | Indicator                                         | Description                                     |
 | ------------------------------------------------- | ----------------------------------------------- |
 | URL parameters with `page=`, `file=`, `template=` | May allow inclusion of external or local files  |
@@ -416,6 +417,35 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 | `${@system($_GET['cmd'])}`     | PHP RCE in misconfigured templates or eval calls |
 | `$(whoami)`                    | Unix-style command substitution                  |
 
+### Responder
+- Responder is a powerful LLMNR/NBT-NS/MDNS poisoner used in penetration testing to capture NTLMv1/v2 hashes on a local network.
+#### Basic Usage
+- sudo responder -I tun0 --> or eth0 for home labs (tun0 for htb)
+#### Common Switches and Their Purpose
+| Switch       | Description                                                                |
+| ------------ | -------------------------------------------------------------------------- |
+| `-I <iface>` | Specify the network interface (e.g., `eth0`, `tun0`) to listen on          |
+| `-v`         | Verbose output (see more details about incoming requests)                  |
+| `-f`         | Fingerprint hosts when they respond                                        |
+| `-w`         | Enable WPAD rogue proxy server                                             |
+| `-r`         | Enable NetBIOS name service (NBT-NS) poisoning                             |
+| `-d`         | Enable DHCP server (for DHCP poisoning; rarely needed)                     |
+| `-F`         | Force NTLM authentication for WPAD (useful when targeting domain machines) |
+| `-A`         | Analyze mode — runs tests and prints host information, but doesn’t poison  |
+
+#### Example Commands
+- Start Responder on VPN interface (tun0):
+  - sudo responder -I tun0
+
+- Start with full poisoning and verbose logging:
+  - sudo responder -I tun0 -wrf -v
+
+- Start in analyze-only mode (no spoofing, just info):
+  - sudo responder -I tun0 -A
+#### Where Are Captured Hashes Stored
+- /usr/share/responder/logs/
+
+ 
 ### Methodology
 1. Perform nmap scan --> _nmap -sV -T5 TargetIP_ --> **Port 80 open, http service detected**
 - I noticed OpenSSL and PHP service and version discovered with nmap scan
