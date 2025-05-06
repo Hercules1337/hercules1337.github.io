@@ -381,6 +381,7 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
     - Client hashes the password with the challenge and sends it back.
     - Server checks this hash against its stored credentials (usually via a domain controller or local user list).
 - CTF & Pentesting Context
+
 | Use Case                 | Description                                                                       |
 | ------------------------ | --------------------------------------------------------------------------------- |
 | **Hash Capture**         | You can capture NTLM hashes using responder, SMB relays, etc.                     |
