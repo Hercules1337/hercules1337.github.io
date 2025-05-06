@@ -367,6 +367,12 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 ### Remote Code Execution (RCE)
 - RCE is when an attacker can run arbitrary commands or code on a server, often leading to full control.
   - RCE is the end goal of many attacks — like RFI, LFI, insecure deserialization, or command injection.
+*** etc/hosts/
+- The /etc/hosts file is a local DNS override file used by your operating system to map domain names to IP addresses manually.
+- Why You Need It for HTB or CTF
+  - HTB and CTF machines often ask you to access a web application by a hostname like internal.htb, dev.machine.htb, or admin.intranet.local. But these fake/internal domains don’t exist publicly, so:
+    - Your system won’t resolve them using normal DNS.
+    - Adding them to /etc/hosts forces your machine to treat them like real domains.
 
 ### What to Look For During Testing
 | Indicator                                         | Description                                     |
@@ -393,7 +399,11 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 | `${@system($_GET['cmd'])}`     | PHP RCE in misconfigured templates or eval calls |
 | `$(whoami)`                    | Unix-style command substitution                  |
 
-
+### Methodology
+1. Perform nmap scan --> _nmap -sV -T5 TargetIP_ --> **Port 80 open, http service detected**
+- I noticed OpenSSL and PHP service and version discovered with nmap scan
+2. Access web service --> domain "unika.htb" resolved
+3. 
 
 
 
