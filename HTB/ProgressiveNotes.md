@@ -486,9 +486,9 @@ Going in blind.
 5. Discovered email and domain in contact info section "thetoppers.htb"
 6. add domain to hosts file and map to target IP
 7. Start enumeration of directories and subdomains of "thetoppers.htb"
-8. Directory enumeration with ffuf --> `_~$ ffuf -u http://thetoppers.htb/FUZZ -w /usr/share/wordlists/dirb/common.txt_`
-9. Subdomain enumeration with ffuf --> `_~$ ffuf -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -fs 0_`
-10. Using wfuzz as ffuf is not working well. -- > `_~$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --hc 200 -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb"_`
+8. Directory enumeration with ffuf --> `~$ ffuf -u http://thetoppers.htb/FUZZ -w /usr/share/wordlists/dirb/common.txt`
+9. Subdomain enumeration with ffuf --> `~$ ffuf -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -fs 0`
+10. Using wfuzz as ffuf is not working well. -- > `~$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --hc 200 -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb"`
 11. Dir enum went well, but subdomain enum wasnt working that well in HTB's PwnBox I belive due to the nature of virtual hosts... The correct subdomain is "s3" which was only discovered as status code `404`.
 12. Moving on, time to enumerate the newly discovered subdomain. Will use ffuf, gobuster, and `curl -I s3.toppers.htb` to find directories and useful headers.
 13. Discovered _/health_ directory that dispalyed the status of services which were either _"available"_ or _"running"_.
@@ -523,9 +523,14 @@ Going in blind.
 19. Found `s3.thetoppers.htb` easily
 20. Add subdomain to /etc/hosts file as well which I already did
 21. To list all s3 buckets hosted by the server use the `ls` flag when using `awscli`
-22. awscli command --> `_$ aws --endpoint=http://s3.thetoppers.htb s3 ls_`
-23. 
-24. 
+22. awscli command --> `~$ aws --endpoint=http://s3.thetoppers.htb s3 ls`
+23. We can also use the ls command to list objects and common prefixes under the specified bucket.
+24. awscli command --> `~$aws --endpoint=http://s3.thetoppers.htb s3 ls s3://thetoppers.htb`
+  - Discovered:
+    - 2025-05-06 16:50:58          0 .htaccess
+    - 2025-05-06 16:50:58      11952 index.php
+
+25. 
 
 
 
