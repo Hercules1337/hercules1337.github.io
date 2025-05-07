@@ -495,18 +495,18 @@ Going in blind.
 14. I learned that the subdomain _"s3"_ is running `amazon s3`.
 15. Next is to access or interact with the `amazon s3` service.
 16. To interact with the amazon s3 service, `awscli` is a solution.
-
+* * *
 ### What is awscli
 - The AWS CLI is a command-line tool used to interact with AWS services — including S3 — through simple commands and options.
   - Simple Use: You can list, download, upload, and manage S3 buckets and files.
 ### Common awscli S3 Commands
-| Command                  | Description                              | Example                                                                             |
-| ------------------------ | ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| `aws s3 ls`              | List all buckets or contents of a bucket | `aws s3 ls s3://bucket-name --endpoint-url http://s3.thetoppers.htb`                |
-| `aws s3 cp`              | Copy file to/from a bucket               | `aws s3 cp s3://bucket-name/flag.txt . --endpoint-url http://s3.thetoppers.htb`     |
-| `aws s3 sync`            | Sync folder locally and in bucket        | `aws s3 sync s3://bucket-name ./local-dir --endpoint-url http://s3.thetoppers.htb`  |
-| `aws s3api list-buckets` | List buckets using raw API call          | `aws s3api list-buckets --endpoint-url http://s3.thetoppers.htb`                    |
-| `aws s3api list-objects` | List contents of a specific bucket       | `aws s3api list-objects --bucket my-bucket --endpoint-url http://s3.thetoppers.htb` |
+| Command                  | Description                              |
+| ------------------------ | ---------------------------------------- |
+| `aws s3 ls`              | List all buckets or contents of a bucket |
+| `aws s3 cp`              | Copy file to/from a bucket               |
+| `aws s3 sync`            | Sync folder locally and in bucket        |
+| `aws s3api list-buckets` | List buckets using raw API call          |
+| `aws s3api list-objects` | List contents of a specific bucket       |
 ### Required Setup (For HTB-style anonymous or weak setups)
 - Sometimes no credentials are required. Run this to set dummy creds --> `aws configure`
   - Access Key ID: test
@@ -517,7 +517,15 @@ Going in blind.
 - Always include --endpoint-url http://s3.thetoppers.htb for non-AWS targets.
 - Bucket names are often guessable (like thetoppers, files, flag, public).
 - Combine with ffuf to brute bucket names and file names.
-
+* * *
+17. Got stuck and looked at the official writeup. Gobuster was a better tool to use for enumeration as it has a vhost enumeration setting which will require the flag `--append-domain` in the command.
+18. Gobuster command --> `gobuster vhost -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -u http://thetoppers.htb --append-domain`
+19. Found `s3.thetoppers.htb` easily
+20. Add subdomain to /etc/hosts file as well which I already did
+21. To list all s3 buckets hosted by the server use the `ls` flag when using `awscli`
+22. awscli command --> `_$ aws --endpoint=http://s3.thetoppers.htb s3 ls_`
+23. 
+24. 
 
 
 
