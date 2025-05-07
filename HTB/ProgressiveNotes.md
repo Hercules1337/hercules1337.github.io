@@ -477,7 +477,24 @@ What Nmap scanning switch employs the use of default scripts during a scan? _-sC
 
 ## 13. Three
 
-
+### Methodology
+Going in blind.
+1. Time for reconnaisance and enumeration.
+2. I will start with an nmap scan --> `_ sudo nmap -p- -sC -sV --min-rate 1000 TargetIP_`
+3. SSH service dsicovered on port 22 and http discovered on port 80. OS is discovered to be linux
+4. Lets check on the web service. Navigate to the target IP in the browser.
+5. Discovered email and domain in contact info section "thetoppers.htb"
+6. add domain to hosts file and map to target IP
+7. Start enumeration of directories and subdomains of "thetoppers.htb"
+8. Directory enumeration with ffuf --> `_~$ ffuf -u http://thetoppers.htb/FUZZ -w /usr/share/wordlists/dirb/common.txt_`
+9. Subdomain enumeration with ffuf --> `_~$ ffuf -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -fs 0_`
+10. Using wfuzz as ffuf is not working well. -- > `_~$ wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --hc 200 -u http://thetoppers.htb -H "Host: FUZZ.thetoppers.htb"_`
+11. Dir enum went well, but subdomain enum wasnt working that well in HTB's PwnBox I belive due to the nature of virtual hosts... The correct subdomain is "s3" which was only discovered as status code `404`.
+12. Moving on, time to enumerate the newly discovered subdomain. Will use ffuf, gobuster, and `curl -I s3.toppers.htb` to find directories and useful headers.
+13. Discovered _/health_ directory that dispalyed the status of services which were either _"available"_ or _"running"_.
+14. I learned that the subdomain _"s3"_ is running `amazon s3`.
+15. Next is to access or interact with the `amazon s3` service.
+16. 
 
 
 
