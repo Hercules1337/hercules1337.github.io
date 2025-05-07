@@ -494,7 +494,30 @@ Going in blind.
 13. Discovered _/health_ directory that dispalyed the status of services which were either _"available"_ or _"running"_.
 14. I learned that the subdomain _"s3"_ is running `amazon s3`.
 15. Next is to access or interact with the `amazon s3` service.
-16. 
+16. To interact with the amazon s3 service, `awscli` is a solution.
+
+### What is awscli
+- The AWS CLI is a command-line tool used to interact with AWS services — including S3 — through simple commands and options.
+  - Simple Use: You can list, download, upload, and manage S3 buckets and files.
+### Common awscli S3 Commands
+| Command                  | Description                              | Example                                                                             |
+| ------------------------ | ---------------------------------------- | ----------------------------------------------------------------------------------- |
+| `aws s3 ls`              | List all buckets or contents of a bucket | `aws s3 ls s3://bucket-name --endpoint-url http://s3.thetoppers.htb`                |
+| `aws s3 cp`              | Copy file to/from a bucket               | `aws s3 cp s3://bucket-name/flag.txt . --endpoint-url http://s3.thetoppers.htb`     |
+| `aws s3 sync`            | Sync folder locally and in bucket        | `aws s3 sync s3://bucket-name ./local-dir --endpoint-url http://s3.thetoppers.htb`  |
+| `aws s3api list-buckets` | List buckets using raw API call          | `aws s3api list-buckets --endpoint-url http://s3.thetoppers.htb`                    |
+| `aws s3api list-objects` | List contents of a specific bucket       | `aws s3api list-objects --bucket my-bucket --endpoint-url http://s3.thetoppers.htb` |
+### Required Setup (For HTB-style anonymous or weak setups)
+- Sometimes no credentials are required. Run this to set dummy creds --> `aws configure`
+  - Access Key ID: test
+  - Secret Access Key: test
+  - Region: us-east-1
+  - Output format: json
+### Tips for CTFs/HTB
+- Always include --endpoint-url http://s3.thetoppers.htb for non-AWS targets.
+- Bucket names are often guessable (like thetoppers, files, flag, public).
+- Combine with ffuf to brute bucket names and file names.
+
 
 
 
