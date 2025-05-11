@@ -584,15 +584,33 @@ will achieve remote code execution.
 * * *
 
 ## 15. Bike
+### Server-Side Template Injection (SSTI)
+ - SSTI is a web security vulnerability that occurs when user input is unsafely embedded into a server-side template. If the template engine processes this input without proper sanitization, attackers can inject malicious code. This may allow them to read server files, execute commands, or take full control of the web server.
+### Node.js
+- Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows developers to run JavaScript on the server side, not just in the browser. It’s commonly used for building fast and scalable network applications like APIs, web apps, and real-time services.
+### Templates and Template Engines
+- A template is a pre-defined file that defines how content should be displayed—often HTML mixed with placeholders (e.g., {{username}}).
+- A template engine takes this template and dynamically inserts data into it before sending it to the user.
 
+### Methodology
 
+1. Enumeration & Recon
+  - nmap -sC -sV --min-rate 1000 -p- TargetIP
+  - Port 22 SSH service discovered
+  - Port 80 open is "tcpwrapped" or "filtered" so it makes it difficult for Nmap to identify the service properly
+2. Navigate to IP address in browser.
+  - Detect running services using `wappalyzer` extension
+  - `node.js` is running
+3. I am extremely unfmailiar with templates and Node.js. I used the `Official Writeup` for this one.
+4. It involved finding a payload for the _handlebars_ template engine on `HackTricks`.
+5. URL encoding is necessary to bypass filters
+6. Must read Node.js documentation about certain `global objects` and a `process` object
+7. Then alot of burpsuite repeater is used to verify is the payload is working or not.
+8. Then once you successfully achieve command execution, time to get the flag.
+9. `Flag Captured`
+10. Machine Pwned!
 
-
-
-
-
-
-
+* * *
 
 ## 16. Funnel
 ## 17. Pennyworth
