@@ -2,4 +2,4 @@ title: Hercules' Portfolio of Notes and Cybersecurity Projects
 description: Greatness demands Sacrifice
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/merlot@v0.2.0
