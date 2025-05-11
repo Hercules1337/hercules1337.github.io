@@ -576,7 +576,7 @@ will achieve remote code execution.
   - Look up "magento" default credentials and password requirements and most common passwords in 2023 (https://community.spiceworks.com/t/most-common-passwords-of-2023-the-top-10/963430)
   - List discovered
 7. Use list in a brute force attack on the admin account.
-  - I used burp suite's `intruder` to brute force
+  - I used burp suite's `intruder` to brute force, sometimes I use wfuzz to do the same thing. You just need to capture the login request to the admin page and set the password to the `FUZZ` keyword and then save it to a `.txt` file for wfuzz.
   - Login successful with one of the passwords from the list
 8. `Flag captured`
 9. Machine Pwned!
