@@ -557,6 +557,32 @@ will achieve remote code execution.
 * * *
 
 ## 14. Ignition
+
+### Methodology
+1. Nmap scan of the target
+  - nmap -sV -sC --min-rate 1000 -p- "TargetIP"
+  - Port 80 HTTP service detected (`nginx 1.14.2`)
+2. Navigate to IP address using curl and on browser
+  - `curl -v http://TargetIP`
+  - HTTP response code `302` recieved
+  - ignition.htb domain discovered, not accessible
+3. Add domain + IP to `/etc/hosts/` file
+  - `sudo nano /etc/hosts/`
+4. Navigate to web application "ignition.htb" --> successful!
+5. Enumerate (bust) directories
+  - `ffuf -u http://ignition.htb/FUZZ -w /usr/share/wordlists/dirb/common.txt`
+  - `/admin` page found for "Magento"
+6. Attempt default credentials
+  - Look up "magento" default credentials and password requirements and most common passwords in 2023 (https://community.spiceworks.com/t/most-common-passwords-of-2023-the-top-10/963430)
+  - List discovered
+7. Use list in a brute force attack on the admin account.
+  - I used burp suite's `intruder` to brute force
+  - Login successful with one of the passwords from the list
+8. `Flag captured`
+9. Machine Pwned!
+
+* * *
+
 ## 15. Bike
 ## 16. Funnel
 ## 17. Pennyworth
