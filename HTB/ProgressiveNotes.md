@@ -631,6 +631,29 @@ will achieve remote code execution.
 * * * 
 
 ## 17. Pennyworth
+### Methodology
+1. Enumeration and reconnaisance - nmap - `nmap -sC -sV -p- --min-rate 1000 "Target_IP"`
+2. Discovered Port `8080` open, the service `Jetty` is running.
+3. Navigate to web service to `IP_address:8080`
+4. Discovered service `Jenkins` is being used.
+5. Attempt to brute force common password pair credentials
+6. Login successful with user `root`
+7. Find out how to achieve RCE.
+- Useful resource https://cloud.hacktricks.xyz/pentesting-ci-cd/jenkins-security
+- https://github.com/gquere/pwn_jenkins
+- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+8. Discovered Jenkins has a `script console` to be able to run commands on the host server.
+9. Look for payload for RCE and potentially a reverse shell.
+10. Payload discovered using resource.
+11. Set up reverse shell listener with `netcat` on local machine `nc -lvnp 9001`.
+12. Deliver payload in script after replacing listening IP address to `tun0` IP address and listening port `9001` in the payload.
+13. Reverse shell achieved!
+14. Navigate system to find flag
+15. `Flag Captured`
+16. Machine Pwned
+  
+* * *
+
 ### 18. Tactics
 ## 19. Archetype
 ## 20. Oopsie
