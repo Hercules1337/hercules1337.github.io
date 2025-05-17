@@ -654,7 +654,17 @@ will achieve remote code execution.
   
 * * *
 
-### 18. Tactics
+## 18. Tactics
+Which Nmap switch can we use to enumerate machines when our ping ICMP packets are blocked by the Windows firewall?
+
+### Methodology
+1.
+
+
+
+
+* * *
+
 ## 19. Archetype
 ## 20. Oopsie
 ## 21. Vaccine
