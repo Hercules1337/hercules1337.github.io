@@ -613,6 +613,23 @@ will achieve remote code execution.
 * * *
 
 ## 16. Funnel
+
+### Methodology
+1. Nmap scan `nmap -sC -sV -T5 IP`
+- Discovered SSH and FTP
+2. Accessed FTP with `anonymous` login
+3. Gathered data for password policy and document with usernames
+4. Tested usernames on ssh with default password policy
+5. One account discovered, using default password
+6. Nothing in direcotry, checked running services with `ps`, nothing. Check for open ports `ss -tlnp`. Success PostgreSQL running on port `5432`
+7. Next set up local tunneling with SSH `ssh -L "localport":"localhost":"remoteport" username@hostIP`
+8. Connect to postgreSQL from local machine now with loacl tunneling with `psql -U username -h localhost -p 1234`
+9. Navigate through data base
+10. `Flag Captured`
+11. Machine Pwned
+
+* * * 
+
 ## 17. Pennyworth
 ### 18. Tactics
 ## 19. Archetype
