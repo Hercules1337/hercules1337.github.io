@@ -32,6 +32,9 @@ Content-Type: application/x-www-form-urlencoded
 
 csrf=50FaWgdOhi9M9wyna8taR1k3ODOR8d6u&email=example@normal-website.com
 ```
+### CSRF Token Flaws
+Validation of CSRF token depends on request method
+Some applications correctly validate the token when the request uses the POST method but skip the validation when the GET method is used. 
 
 * SameSite Cookies
 * Referer-Based Validation
