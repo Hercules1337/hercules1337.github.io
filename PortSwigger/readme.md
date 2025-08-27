@@ -14,3 +14,25 @@ Here is an example
         document.forms[0].submit();
 </script>'
 ```
+## Common defences against CSRF
+* CSRF Tokens: When issuing a request to perform a sensitive action, such as submitting a form, the client must include the correct CSRF token. Otherwise, the server will refuse to perform the requested action. A common way to share CSRF tokens with the client is to include them as a hidden parameter in an HTML form, for example:
+```
+<form name="change-email-form" action="/my-account/change-email" method="POST">
+    <label>Email</label>
+    <input required type="email" name="email" value="example@normal-website.com">
+    <input required type="hidden" name="csrf" value="50FaWgdOhi9M9wyna8taR1k3ODOR8d6u">
+    <button class='button' type='submit'> Update email </button>
+</form>
+```
+```
+POST /my-account/change-email HTTP/1.1
+Host: normal-website.com
+Content-Length: 70
+Content-Type: application/x-www-form-urlencoded
+
+csrf=50FaWgdOhi9M9wyna8taR1k3ODOR8d6u&email=example@normal-website.com
+```
+
+* SameSite Cookies
+* Referer-Based Validation
+
