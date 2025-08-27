@@ -58,7 +58,9 @@ Validation of CSRF token depends on request method
      * Use your own token from your own attack to access a victims account
 4.  some applications do tie the CSRF token to a cookie, but not to the same cookie that is used to track sessions. This can easily occur when an application employs two different frameworks, one for session handling and one for CSRF protection, which are not integrated together.
      * If the website contains any behavior that allows an attacker to set a cookie in a victim's browser, then an attack is possible.
-     * The attacker can log in to the application using their own account, obtain a valid token and associated cookie, leverage the cookie-setting behavior to place their cookie into the victim's browser, and feed their token to the victim in their CSRF attack. 
+     * The attacker can log in to the application using their own account, obtain a valid token and associated cookie, leverage the cookie-setting behavior to place their cookie into the victim's browser, and feed their token to the victim in their CSRF attack.
+     * You try to inject your csrf token and csrf key into the victims browser, but not the session token in the cookie, since its not tied together.
+     * Test if manipulating session token affects the response vs. the CSRF key in the cookie. "Invalid csrf token" "Invalid session".
 
 * SameSite Cookies
 * Referer-Based Validation
