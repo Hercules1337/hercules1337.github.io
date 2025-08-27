@@ -34,7 +34,10 @@ csrf=50FaWgdOhi9M9wyna8taR1k3ODOR8d6u&email=example@normal-website.com
 ```
 ### CSRF Token Flaws
 Validation of CSRF token depends on request method
-Some applications correctly validate the token when the request uses the POST method but skip the validation when the GET method is used. 
+- Some applications correctly validate the token when the request uses the POST method but skip the validation when the GET method is used.
+ - Change request to potentially bypass check
+- Some applications correctly validate the token when it is present but skip the validation if the token is omitted.
+ - Remove the csrf parameter in the request to potentially bypass check 
 
 * SameSite Cookies
 * Referer-Based Validation
