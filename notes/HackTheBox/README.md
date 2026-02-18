@@ -1,3 +1,4 @@
+[Home](/) | [Showcase](/showcase/) | [Notes](/notes/)
 # Notes as I go
 
 ## Machines
