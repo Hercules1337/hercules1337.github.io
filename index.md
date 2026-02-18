@@ -1,4 +1,4 @@
-# Ethan — Offensive Security Notes & OSCP Journey
+# Hercules — Offensive Security Notes & OSCP Journey
 
 Welcome to my security lab notebook.  
 This site is a hybrid: a clean overview for recruiters and a deep technical workspace where I document everything I learn while preparing for the OSCP.
