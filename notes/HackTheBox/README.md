@@ -1,4 +1,4 @@
-# Notes as I go through "Starting Point"
+# Notes as I go
 
 ## Machines
 ## 1. Meow
