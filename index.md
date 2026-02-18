@@ -41,7 +41,7 @@ Coming soon…
 These are my detailed notes — commands, dead ends, screenshots, and full methodology.  
 This is where I do the real work.
 
-👉 **[View all notes](notes/)**
+👉 **[View all notes](notes/HackTheBox/)**
 
 ---
 
