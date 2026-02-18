@@ -1,3 +1,5 @@
+[Home](/) | [Showcase](/showcase/) | [Notes](/notes/)
+
 # Notes
 
 This section contains all of my raw, in‑progress notes for labs and training platforms.
