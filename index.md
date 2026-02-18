@@ -1,3 +1,4 @@
+[Home](/) | [Showcase](/showcase/) | [Notes](/notes/)
 # Hercules — Offensive Security Notes & OSCP Journey
 
 Welcome to my security lab notebook.  
