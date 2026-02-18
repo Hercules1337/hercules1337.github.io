@@ -35,6 +35,8 @@ A small selection of clean, recruiter‑friendly writeups will go here.
 
 Coming soon…
 
+👉 **[Showcase](/showcase/)**
+
 ---
 
 ## 🔹 Full Notes (Raw & In‑Progress)
