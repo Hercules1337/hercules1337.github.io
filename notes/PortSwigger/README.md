@@ -1,3 +1,4 @@
+[Home](/) | [Showcase](/showcase/) | [Notes](/notes/)
 # PortSwigger Academy Notes
 
 ## CSRF
