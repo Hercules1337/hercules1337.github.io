@@ -2,7 +2,7 @@
 # Hercules — Offensive Security Notes & OSCP Journey
 
 Welcome to my security lab notebook.  
-This site is a hybrid: a clean overview for recruiters and a deep technical workspace where I document everything I learn while preparing for the OSCP.
+This site is a hybrid: a clean overview for recruiters and a deep technical workspace where I document everything I learn while preparing for the OSCP and other certifiations.
 
 I use this space to track my progress across Hack The Box, PortSwigger Academy, and other hands‑on labs.  
 If you're a recruiter or hiring manager, the sections below highlight my focus areas and showcase my methodology.
